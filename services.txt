@@ -1,0 +1,47 @@
+                    <!-- Service 2 -->
+                    <div class="service fade-up" id="services_card_2">
+                        <div class="image" id="services_image_2" style="background-image: url('wp-content/uploads/2024/1.jpeg');"></div>
+                        <div class="text">
+                            <div class="inner" id="services_text_2">
+                                <h2 class="text-2xl text-bold text-uppercase text-black" id="services_title_2">Bornes de Recharge</h2>
+                                <p id="services_description_2">Installer des bornes de recharge pour voitures électriques est une solution pratique et écologique. Grâce à notre expertise, nous rendons le processus simple et efficace.</p>
+                                <a class="btn btn-stroke btn-black" id="services_button_2" href="index.html%3Fp=82.html">
+                                    <span>En savoir plus</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service fade-up" id="services_card_3">
+                        <div class="image" id="services_image_3" style="background-image: url('wp-content/uploads/2024/6.jpeg');"></div>
+                        <div class="text">
+                            <div class="inner" id="services_text_3">
+                                <h2 class="text-2xl text-bold text-uppercase text-black" id="services_title_3" style="font-size: 1.5rem;">Panneau & Compteur Électrique</h2>
+                                <p id="services_description_3">Mettre à jour votre panneau électrique est essentiel pour la sécurité de votre maison. Avec notre expertise, nous assurons une installation fiable et conforme aux normes.</p>
+                                <a class="btn btn-stroke btn-black" id="services_button_3" href="index.html%3Fp=83.html">
+                                    <span>En savoir plus</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service fade-up" id="services_card_4">
+                        <div class="image" id="services_image_4" style="background-image: url('wp-content/uploads/2024/8.jpeg');"></div>
+                        <div class="text">
+                            <div class="inner" id="services_text_4">
+                                <h2 class="text-2xl text-bold text-uppercase text-black" id="services_title_4">Plancher Radiant</h2>
+                                <p id="services_description_4">Installer des planchers chauffants sur mesure améliore le confort de votre maison. Avec notre savoir-faire, nous garantissons une installation précise et adaptée à vos besoins.</p>
+                                <a class="btn btn-stroke btn-black" id="services_button_4" href="index.html%3Fp=84.html">
+                                    <span>En savoir Plus</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -250,7 +250,7 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
 
 </head>
 
-<body class="page-template page-template-page-services page-template-page-services-php page page-id-9">
+<body class="services-template-default single single-services postid-81">
 	
 <div class="animsition">
 	
@@ -272,7 +272,7 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
                     </button>
                     <nav class="show-for-large">
 	                    <ul id="menu-primary-menu" class=""><li id="menu-item-308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-308"><a title="Acceuil" href="index.html">Acceuil</a></li>
-<li id="menu-item-133" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-133 active"><a title="Services" href="services.html">Services</a></li>
+<li id="menu-item-133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133 current_page_parent"><a title="Services" href="services.html">Services</a></li>
 <li id="menu-item-134" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a title="Projets" href="projects.html">Projets</a></li>
 <li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"><a title="A propos" href="about.html">A propos</a></li>
 <li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a title="Nous Rejoindre" href="contact.html">Nous Rejoindre</a></li>
@@ -290,7 +290,7 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
     <div class="top">
         <nav>
             <ul id="menu-primary-menu-1" class=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-308"><a title="Acceuil" href="index.html">Acceuil</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-133 active"><a title="Services" href="services.html">Services</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133 current_page_parent"><a title="Services" href="services.html">Services</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a title="Projets" href="projects.html">Projets</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"><a title="A propos" href="about.html">A propos</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a title="Nous Rejoindre" href="contact.html">Nous Rejoindre</a></li>
@@ -309,40 +309,52 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
     </div>
 </div>
 <div class="menu-mask"></div>
-<div class="hero" id="services_hero" style="border-bottom: 2px white solid">
+<div class="hero article-hero">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell">
-                <div class="hero-content" id="services_hero_content" style="border-bottom: 2px #3a62dc solid">
-                    <h1 class="text-5xl text-white text-uppercase text-bold m-0 fade-up" id="services_hero_title">
-                        Services
-                    </h1>
+                <div class="hero-content" style="justify-content: center; align-items: center;">
+                    <h1 class="text-3xl text-white text-uppercase text-bold fade-up" id="service_hero_title" style=" text-align: center; border-bottom: 1px solid white;">Construction Neuve</h1>
+                    <div class="category-list fade-up">
+                        <button style="color: white !important;">Résidentiel</button><button style="color: white !important;">Commercial</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="hero-image" id="services_hero_image" style="background-image: url('wp-content/uploads/2019/08/photo3.png');"></div>
+    <div class="hero-image" id="service_hero_image" style="background-image: url('wp-content/uploads/2024/5.jpeg');"></div>
 </div>
 
-<div class="content bg-gray-ltr">
+<div class="article-image bg-white">
     <div class="grid-container">
-        <div class="grid-x">
+        <div class="grid-x align-center">
             <div class="cell">
-                <div class="service-list">
-                    <!-- Services cards will be populated here dynamically from services.js -->
+                <div id="service-gallery" class="project-gallery-container">
+                    <!-- Gallery images will be injected here -->
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="contact-cta" style="background-image:url('wp-content/uploads/2019/11/drone_NEW.jpg');">
+<div class="content bg-white ">
+    <div class="grid-container">
+        <div class="grid-x align-center">
+            <div class="cell large-9 rich-text">
+                <p id="service_description"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="contact-cta" id="services_contact_cta_background" style="background-image:url('wp-content/uploads/2019/11/drone_NEW.jpg');">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell text-center">
                 <div class="inner">
-                    <h2 class="text-2xl text-bold text-uppercase text-white fade-up">Prêt à discuter de votre prochain projet?</h2>
-                    <a class="btn btn-primary fade-up" href="index.html%3Fp=48.html">
+                    <h2 class="text-2xl text-bold text-uppercase text-white fade-up" id="services_contact_cta_title">Prêt à discuter de votre prochain projet?</h2>
+                    <a class="btn btn-primary fade-up" href="contact.html">
                         <span>Contactez Nous</span>
                     </a>
                 </div>
@@ -350,7 +362,7 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
         </div>
     </div>
 </div>
-
+	
 <footer class="site-footer">
 		<div class="grid-container">
 		    <div class="grid-x">
@@ -420,11 +432,12 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
 			        </div>
 		                </div>
 		</div>
-	</footer>
+</footer>
+
 </div>
 
 <!-- Foundation JS -->
-<script src="scripts/services.js"></script>
+<script src="scripts/service-detail.js"></script>
 <script src="wp-content/themes/gm_theme/assets/js/foundation/jquery.min.js"></script>
 <script src="https://gmcontractors.co.uk/wp-content/themes/gm_theme/assets/js/foundation/what-input.min.js"></script>
 <script src="wp-content/themes/gm_theme/assets/js/foundation/foundation.min.js"></script>
@@ -607,4 +620,4 @@ var ctcc_vars = {"expiry":"30","method":"1","version":"1"};
 			
 			<div id="catapult-cookie-bar" class=""><div class="ctcc-inner "><span class="ctcc-left-side">This site uses cookies. <a class="ctcc-more-info-link" tabindex=0 target="_blank" href="index.html%3Fp=19.html">Find out more.</a></span><span class="ctcc-right-side"><button id="catapultCookie" tabindex=0 onclick="catapultAcceptCookies();">X</button></span></div><!-- custom wrapper class --></div><!-- #catapult-cookie-bar -->
 
-<!-- Page cached by LiteSpeed Cache 6.4.1 on 2024-09-19 14:30:19 -->
+<!-- Page cached by LiteSpeed Cache 6.4.1 on 2024-09-18 22:57:43 -->

@@ -1,51 +1,49 @@
+// services.js
 function fetchServicesContent() {
-    const servicesReq = new Request('http://localhost:1337/services');
+    const servicesReq = new Request('http://localhost:1337/Services');
 
     fetch(servicesReq)
         .then(response => response.json())
         .then(services => {
-            let servicesContent = services[0];  // Fetching the first Services entry
-
             // Update Hero Section
-            document.getElementById("services_hero_title").innerHTML = servicesContent.services_hero_title;
+            document.getElementById("services_hero_title").innerHTML = services[0].services_hero_title;
 
-            // Update Hero Image
-            if (servicesContent.services_hero_image && servicesContent.services_hero_image.url) {
-                document.getElementById("services_hero_image").style.backgroundImage = `url(http://localhost:1337${servicesContent.services_hero_image.url})`;
+            if (services[0].services_hero_image && services[0].services_hero_image.url) {
+                document.getElementById("services_hero_image").style.backgroundImage = `url(http://localhost:1337${services[0].services_hero_image.url})`;
             }
 
-            // Service 1
-            document.getElementById("services_title_1").innerHTML = servicesContent.services_card_1_title;
-            document.getElementById("services_description_1").innerHTML = servicesContent.services_card_1_description;
-            document.getElementById("services_image_1").style.backgroundImage = `url(http://localhost:1337${servicesContent.services_image_1.url})`;
-            document.getElementById("services_button_1").href = "index.html?p=81.html";
+            // Clear existing services
+            const serviceList = document.querySelector('.service-list');
+            serviceList.innerHTML = '';
 
-            // Service 2
-            document.getElementById("services_title_2").innerHTML = servicesContent.services_card_2_title;
-            document.getElementById("services_description_2").innerHTML = servicesContent.services_card_2_description;
-            document.getElementById("services_image_2").style.backgroundImage = `url(http://localhost:1337${servicesContent.services_image_2.url})`;
-            document.getElementById("services_button_2").href = "index.html?p=82.html";
-
-            // Service 3
-            document.getElementById("services_title_3").innerHTML = servicesContent.services_card_3_title;
-            document.getElementById("services_description_3").innerHTML = servicesContent.services_card_3_description;
-            document.getElementById("services_image_3").style.backgroundImage = `url(http://localhost:1337${servicesContent.services_image_3.url})`;
-            document.getElementById("services_button_3").href = "index.html?p=83.html";
-
-            // Service 4
-            document.getElementById("services_title_4").innerHTML = servicesContent.services_card_4_title;
-            document.getElementById("services_description_4").innerHTML = servicesContent.services_card_4_description;
-            document.getElementById("services_image_4").style.backgroundImage = `url(http://localhost:1337${servicesContent.services_image_4.url})`;
-            document.getElementById("services_button_4").href = "index.html?p=84.html";
+            // Loop over each service and dynamically create a card for it
+            services.forEach((service, index) => {
+                const serviceCard = `
+                    <div class="service fade-up" id="services_card_${index + 1}">
+                        <div class="image" id="services_image_${index + 1}" style="background-image: url('http://localhost:1337${service.services_image.url}');"></div>
+                        <div class="text">
+                            <div class="inner" id="services_text_${index + 1}">
+                                <h2 class="text-2xl text-bold text-uppercase text-black" id="services_title_${index + 1}">${service.services_card_title}</h2>
+                                <p id="services_description_${index + 1}">${service.services_card_description}</p>
+                                <a class="btn btn-stroke btn-black" id="services_button_${index + 1}" href="service-detail.html?id=${service.id}">
+                                    <span>En savoir plus</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                serviceList.innerHTML += serviceCard;
+            });
 
             // Update Contact CTA
-            if (servicesContent.services_contact_cta_background && servicesContent.services_contact_cta_background.url) {
-                document.getElementById("services_contact_cta_background").style.backgroundImage = `url(http://localhost:1337${servicesContent.services_contact_cta_background.url})`;
+            if (services[0].services_contact_cta_background && services[0].services_contact_cta_background.url) {
+                document.getElementById("services_contact_cta_background").style.backgroundImage = `url(http://localhost:1337${services[0].services_contact_cta_background.url})`;
             }
 
-            document.getElementById("services_contact_cta_title").innerHTML = servicesContent.services_contact_cta_title;
-            document.getElementById("services_contact_cta_button").innerHTML = servicesContent.services_contact_cta_button;
-        });
+            document.getElementById("services_contact_cta_title").innerHTML = services[0].services_contact_cta_title;
+            document.getElementById("services_contact_cta_button").innerHTML = services[0].services_contact_cta_button;
+        })
+        .catch(error => console.error('Error fetching services:', error));
 }
 
 // Call the function to fetch Services content
