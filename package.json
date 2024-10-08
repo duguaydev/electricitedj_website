@@ -1,21 +1,21 @@
 {
-  "name": "editorial-app",
+  "name": "electricitedj-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Electricite DJ Inc. Website",
   "main": "index.js",
   "scripts": {
     "dev": "lite-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaracooper/editorial-app.git"
+    "url": "git+https://github.com/duguaydev/electricitedj_website.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zaracooper/editorial-app/issues"
+    "url": "https://github.com/duguaydev/electricitedj_website/issues"
   },
-  "homepage": "https://github.com/zaracooper/editorial-app#readme",
+  "homepage": "https://github.com/duguaydev/electricitedj_website#readme",
   "devDependencies": {
     "lite-server": "^2.6.1"
   }
