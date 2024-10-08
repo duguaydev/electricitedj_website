@@ -16,7 +16,7 @@ $(document).ready(function () {
   
     'use strict';
 
-    var video = jQuery('#myVideo');
+    var video = jQuery('#about_video');
 
 
     checkVideo(video);
@@ -74,22 +74,23 @@ $(".home-hero-slides").slick({
     dots: true
 });
 
-// Home services
-$('#constructionTrigger').hover(function() {
-    $("#constructionImage").toggleClass("is-visible");
+// Home services hover effect
+$('#service_1_link').hover(function() {
+    $("#service_1_image").toggleClass("is-visible");
 });
 
-$('#timber-systemsTrigger').hover(function() {
-    $("#timber-systemsImage").toggleClass("is-visible");
+$('#service_2_link').hover(function() {
+    $("#service_2_image").toggleClass("is-visible");
 });
 
-$('#plant-hireTrigger').hover(function() {
-    $("#plant-hireImage").toggleClass("is-visible");
+$('#service_3_link').hover(function() {
+    $("#service_3_image").toggleClass("is-visible");
 });
 
-$('#haulageTrigger').hover(function() {
-    $("#haulageImage").toggleClass("is-visible");
+$('#service_4_link').hover(function() {
+    $("#service_4_image").toggleClass("is-visible");
 });
+
 
 // Gallery
 $(".gallery").slick({

@@ -1,0 +1,21 @@
+<li class="card mix mix-residential mix-renovation" category="" id="project-cont">
+                            <a href="index.html%3Fp=358.html" id="projects_card_1_link">
+                                <div class="image" id="projects_image_1">
+                                    <div class="inner" id="projects_image_inner_1" style="background-image:url('wp-content/uploads/2024/2.jpeg');"></div>
+                                </div>
+                                <div class="text" id="projects_text_1">
+                                    <div class="top" id="projects_text_top_1">
+                                        <h2 class="text-lg text-bold text-black text-uppercase" id="projects_title_1">Bâtiment Commercial</h2>
+                                        <div class="category-list" id="projects_category_list_1">
+                                            <button id="projects_category_1_button_1">Commercial</button>
+                                            <button id="projects_category_1_button_2">Construction Neuve</button>
+                                        </div>
+                                    </div>
+                                    <div class="bottom" id="projects_text_bottom_1">
+                                        <button class="btn btn-stroke btn-black" id="projects_button_1">
+                                            <span id="projects_button_text_1">Voir le Projet</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </a>
+                        
