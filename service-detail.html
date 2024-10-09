@@ -198,7 +198,9 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
 					opacity: 1;
 					max-height: 999px;
 					min-height: 30px;
-				}</style>
+				}
+
+				</style>
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="wp-content/uploads/2019/08/front.png">
 <link rel="apple-touch-icon" href="wp-content/uploads/2019/08/front.png">
@@ -250,7 +252,14 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
 
 </head>
 
-<body class="services-template-default single single-services postid-81">
+<body class="body services-template-default single single-services" 
+      style="position: relative; background-color: transparent !important; 
+             background-image: url('wp-content/uploads/2019/08/lightning.png'); 
+             background-attachment: fixed; 
+             background-size: cover; 
+             background-repeat: no-repeat;">
+             
+    <div class="background-overlay"></div>
 	
 <div class="animsition">
 	
@@ -309,52 +318,93 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
     </div>
 </div>
 <div class="menu-mask"></div>
-<div class="hero article-hero">
-    <div class="grid-container">
+<div class="hero article-hero" style="background-color: transparent !important; border-bottom: 2px solid white;">
+    <div class="grid-container" style="height: 100%;">
         <div class="grid-x">
             <div class="cell">
-                <div class="hero-content" style="justify-content: center; align-items: center;">
-                    <h1 class="text-3xl text-white text-uppercase text-bold fade-up" id="service_hero_title" style=" text-align: center; border-bottom: 1px solid white;">Construction Neuve</h1>
-                    <div class="category-list fade-up">
-                        <button style="color: white !important;">Résidentiel</button><button style="color: white !important;">Commercial</button>
-                    </div>
+                <div class="home-hero-content" style="justify-content: left; align-items: left;">
+                    <h1 class="text-sm text-white text-uppercase text-bold tracking-wide line-heading fade-up" style="color: #fefefe; font-weight: 500;">Électricité DJ Inc.</h1>
+                    <h3 class="text-3xl text-white text-uppercase text-bold leading-tighter fade-up" style="border-bottom: 2px #3a62dc solid" id="service_hero_title"></h3>
+                    <div class="category-list fade-up" id="service-tags"></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="hero-image" id="service_hero_image" style="background-image: url('wp-content/uploads/2024/5.jpeg');"></div>
+    <div class="hero-image" id="services_hero_image" style="height: 100%; background-size: cover; background-position: center; width: 100%;"></div>
 </div>
 
-<div class="article-image bg-white">
-    <div class="grid-container">
-        <div class="grid-x align-center">
-            <div class="cell">
-                <div id="service-gallery" class="project-gallery-container">
-                    <!-- Gallery images will be injected here -->
-                </div>
-            </div>
-        </div>
+<!-- Service Image Section -->
+<div class="article-image bg-white" id="service-image-container" style="width: 100%; height: 500px; overflow: hidden; margin: 0; padding: 0; border: none;">
+    <div style="width: 100%; height: 100%; margin: 0; padding: 0; border: none;">
+        <img id="service-image" src="" alt="Service Image" style="width: 100%; height: 100%; object-fit: cover; margin: 0; padding: 0; display: block; border: none;">
     </div>
 </div>
 
-<div class="content bg-white ">
+
+
+<!-- Description Section -->
+<div class="content bg-white" id="service-description-container">
     <div class="grid-container">
         <div class="grid-x align-center">
             <div class="cell large-9 rich-text">
+                <h2 id="service_title"></h2>
                 <p id="service_description"></p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- CTA Section -->
+<!-- Gallery Section -->
+<div class="gallery-container bg-white" style="display: flex; align-items: center; justify-content: center;">
+    <div class="gallery" style="display: flex; overflow: visible; width: 100%; height: auto;">
+        <img src="wp-content/uploads/2024/4.jpeg" style="border-radius: 12px; width: 33%; height: auto;" />
+        <img src="wp-content/uploads/2024/1.jpeg" style="border-radius: 12px; width: 33%; height: auto;" />
+        <img src="wp-content/uploads/2024/6.jpeg" style="border-radius: 12px; width: 33%; height: auto;" />
+    </div>
+    <button class="gallery-arrow prev" style="margin-left: 10px;">
+        <i class="material-icons">arrow_back</i>
+    </button>
+    <button class="gallery-arrow next" style="margin-left: 10px;">
+        <i class="material-icons">arrow_forward</i>
+    </button>
+</div>
+
+
+<!-- Text Field Above the Cover Image -->
+<div class="cover-text-above" id="cover-text-above" style="text-align: center; padding: 10px;">
+    <!-- Content to be filled by JavaScript -->
+</div>
+
+<!-- Cover Image Section -->
+<div class="article-image bg-white" id="cover-image-container" style="width: 100%; height: 500px; overflow: hidden; margin: 0; padding: 0; border: none;">
+    <div style="width: 100%; height: 100%; margin: 0; padding: 0; border: none;">
+        <img id="cover-image" src="" alt="Cover Image" style="width: 100%; height: 100%; object-fit: cover; margin: 0; padding: 0; display: block; border: none;">
+    </div>
+</div>
+
+<!-- Text Field Below the Cover Image -->
+<div class="cover-text-below" id="cover-text-below" style="text-align: center; padding: 10px;">
+    <!-- Content to be filled by JavaScript -->
+</div>
+
+
+<div class="grid-container">
+  <div class="grid-x">
+      <div class="cell">
+	  	  <ul id="related-projects-list" class="card-list related-projects fade-up">
+			<!-- Project cards will be inserted here dynamically -->
+		  </ul>
+	  </div>
+  </div>			
+</div>
+<!-- Contact CTA -->
 <div class="contact-cta" id="services_contact_cta_background" style="background-image:url('wp-content/uploads/2019/11/drone_NEW.jpg');">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell text-center">
                 <div class="inner">
                     <h2 class="text-2xl text-bold text-uppercase text-white fade-up" id="services_contact_cta_title">Prêt à discuter de votre prochain projet?</h2>
-                    <a class="btn btn-primary fade-up" href="contact.html">
+                    <a class="btn btn-primary fade-up" href="index.html?p=48.html">
                         <span>Contactez Nous</span>
                     </a>
                 </div>
@@ -362,7 +412,8 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
         </div>
     </div>
 </div>
-	
+
+
 <footer class="site-footer">
 		<div class="grid-container">
 		    <div class="grid-x">
@@ -438,6 +489,7 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
 
 <!-- Foundation JS -->
 <script src="scripts/service-detail.js"></script>
+<script src="scripts/related-projects.js"></script>
 <script src="wp-content/themes/gm_theme/assets/js/foundation/jquery.min.js"></script>
 <script src="https://gmcontractors.co.uk/wp-content/themes/gm_theme/assets/js/foundation/what-input.min.js"></script>
 <script src="wp-content/themes/gm_theme/assets/js/foundation/foundation.min.js"></script>
@@ -462,6 +514,49 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
 <!--</script>-->
 
 <!-- Mix It Up -->
+ <script>
+// Dynamic gallery images (example, replace with API call)
+const galleryImages = [
+    { id: 1, url: '/path-to-image/image1.jpg' },
+    { id: 2, url: '/path-to-image/image2.jpg' },
+    { id: 3, url: '/path-to-image/image3.jpg' }
+];
+
+// DOM element for the gallery container
+const slickTrack = document.getElementById('dynamic-project-gallery');
+
+// Clear previous content
+slickTrack.innerHTML = '';
+
+// Inject images into the gallery
+galleryImages.forEach((image) => {
+    // Create slide
+    const slide = document.createElement('div');
+    slide.classList.add('project-gallery-slide');
+    slide.style.minWidth = '100%'; // Ensure each slide takes the full width of the container
+    slide.style.height = '100%'; // Full height of the container
+
+    // Add image as a background
+    slide.style.backgroundImage = `url(${image.url})`;
+    slide.style.backgroundSize = 'cover'; // Ensure the image covers the container
+    slide.style.backgroundPosition = 'center'; // Center the image
+
+    // Append slide to the gallery
+    slickTrack.appendChild(slide);
+});
+
+// Initialize Slick (if using Slick.js, else remove this block)
+$('#dynamic-project-gallery').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    dots: true,
+    infinite: true,
+    prevArrow: $('#prev-arrow'),
+    nextArrow: $('#next-arrow')
+});
+
+ </script>
 <script>
 jQuery(document).ready(function () {
     jQuery('.dropdown-filter').on('click', function(){

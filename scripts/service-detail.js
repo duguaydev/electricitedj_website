@@ -1,9 +1,9 @@
 function checkForService() {
     const urlParams = new URLSearchParams(window.location.search);
-    const serviceId = urlParams.get('id');
+    const serviceId = urlParams.get('id');  // Get the service ID from the URL
 
     if (serviceId) {
-        getService(serviceId);
+        getService(serviceId);  // Fetch and display the service
     } else {
         showMissingServiceMsg("A service can't be retrieved without an ID.");
     }
@@ -20,44 +20,90 @@ function getService(id) {
                 throw new Error('Service not found');
             }
         })
-        .then(displayService)
+        .then(service => {
+            displayService(service);  // Call displayService to render the data
+        })
         .catch(error => showMissingServiceMsg(error.message));
 }
 
 function displayService(service) {
-    // Update the Hero Section
-    document.getElementById("service_hero_title").innerHTML = service.services_hero_title;
-    document.getElementById("service_hero_image").style.backgroundImage = `url(http://localhost:1337${service.services_hero_image.url})`;
-
-    // Update Article Content
-    document.getElementById("service_description").innerHTML = service.services_card_description;
-
-    // Update Gallery
-    const gallery = document.getElementById("service-gallery");
-    service.gallery_images.forEach(image => {
-        const slide = document.createElement("div");
-        slide.classList.add("project-gallery-slide");
-        slide.style.backgroundImage = `url(http://localhost:1337${image.url})`;
-        gallery.appendChild(slide);
-    });
-
-    // Additional service information (if any)
-    if (service.additional_image && service.additional_image.url) {
-        document.getElementById("service-additional-image").innerHTML = `<img src="http://localhost:1337${service.additional_image.url}">`;
+    // Set the hero title
+    const serviceHeroTitle = document.getElementById("service_hero_title");
+    if (serviceHeroTitle) {
+        serviceHeroTitle.innerHTML = service.services_hero_title || 'Nos Services';
     }
 
-    // Contact CTA Background
-    if (service.services_contact_cta_background && service.services_contact_cta_background.url) {
-        document.getElementById("services_contact_cta_background").style.backgroundImage = `url(http://localhost:1337${service.services_contact_cta_background.url})`;
+    // Set the hero image
+    const serviceHeroImage = document.getElementById("services_hero_image");
+    if (serviceHeroImage) {
+        if (service.services_hero_image && service.services_hero_image.url) {
+            serviceHeroImage.style.backgroundImage = `url(http://localhost:1337${service.services_hero_image.url})`;
+            serviceHeroImage.alt = service.services_hero_image.alternativeText || 'Hero Image';
+        } else {
+            serviceHeroImage.style.backgroundImage = '';  // Clear the image if not available
+        }
     }
 
-    document.getElementById("services_contact_cta_title").innerHTML = service.services_contact_cta_title || "Prêt à discuter de votre prochain projet?";
+    // Set the first service image (cover image)
+    const serviceImage = document.getElementById("service-image");
+    if (serviceImage) {
+        if (service.cover_image && service.cover_image.url) {
+            serviceImage.src = `http://localhost:1337${service.cover_image.url}`;
+            serviceImage.alt = service.cover_image.alternativeText || 'Service Cover Image';
+        } else {
+            serviceImage.src = '';  // Clear the image if it doesn't exist
+            serviceImage.alt = 'No Image Available';
+        }
+    }
+
+    // Set text above and below the cover image
+    const coverTextAbove = document.getElementById("cover-text-above");
+    if (coverTextAbove) {
+        coverTextAbove.innerHTML = service.cover_text_above || 'Default text above cover image';
+    }
+
+    const coverTextBelow = document.getElementById("cover-text-below");
+    if (coverTextBelow) {
+        coverTextBelow.innerHTML = service.cover_text_below || 'Default text below cover image';
+    }
+
+    // Set the service title and description
+    const serviceTitle = document.getElementById("service_title");
+    const serviceDescription = document.getElementById("service_description");
+    if (serviceTitle) {
+        serviceTitle.innerHTML = service.service_title || 'Title not available';
+    }
+    if (serviceDescription) {
+        serviceDescription.innerHTML = service.service_description || 'Description not available';
+    }
+
+    // Set the contact CTA title (optional)
+    const contactCtaTitle = document.getElementById("contact_cta_title");
+    if (contactCtaTitle) {
+        contactCtaTitle.innerHTML = service.services_contact_cta_title || 'Prêt à discuter de votre prochain projet?';
+    }
+
+    // Set the gallery images
+    const galleryImageContainer = document.getElementById("gallery-container");
+    if (galleryImageContainer) {
+        galleryImageContainer.innerHTML = '';  // Clear previous gallery images if any
+        for (let i = 1; i <= 4; i++) {
+            const slideKey = `gallery_slide_${i}`;
+            if (service[slideKey] && service[slideKey].url) {
+                const imgElement = document.createElement("img");
+                imgElement.src = `http://localhost:1337${service[slideKey].url}`;
+                imgElement.alt = service[slideKey].alternativeText || `Gallery Slide ${i}`;
+                imgElement.style.borderRadius = "12px";
+                imgElement.style.border = "1px transparent";
+                imgElement.classList.add("gallery-slide");
+                galleryImageContainer.appendChild(imgElement);
+            }
+        }
+    }
 }
 
 function showMissingServiceMsg(msg) {
-    document.getElementById("not-found").style.display = "block";
-    document.getElementById("err-msg").innerHTML = msg;
+    alert(msg);  // Display an alert with the error message
 }
 
-// Call the function to check for a service ID and load the content
-checkForService();
+checkForService();  // Run the service check when the page loads

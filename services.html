@@ -314,9 +314,7 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
         <div class="grid-x">
             <div class="cell">
                 <div class="hero-content" id="services_hero_content" style="border-bottom: 2px #3a62dc solid">
-                    <h1 class="text-5xl text-white text-uppercase text-bold m-0 fade-up" id="services_hero_title">
-                        Services
-                    </h1>
+                    <h1 class="text-5xl text-white text-uppercase text-bold m-0 fade-up" id="services_hero_title"></h1>
                 </div>
             </div>
         </div>
@@ -329,20 +327,21 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
         <div class="grid-x">
             <div class="cell">
                 <div class="service-list">
-                    <!-- Services cards will be populated here dynamically from services.js -->
+                    <!-- Services cards will be dynamically inserted here -->
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="contact-cta" style="background-image:url('wp-content/uploads/2019/11/drone_NEW.jpg');">
+
+<div class="contact-cta" id="services_contact_cta_background" style="background-image:url('wp-content/uploads/2019/11/drone_NEW.jpg');">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell text-center">
                 <div class="inner">
-                    <h2 class="text-2xl text-bold text-uppercase text-white fade-up">Prêt à discuter de votre prochain projet?</h2>
-                    <a class="btn btn-primary fade-up" href="index.html%3Fp=48.html">
+                    <h2 class="text-2xl text-bold text-uppercase text-white fade-up" id="services_contact_cta_title">Prêt à discuter de votre prochain projet?</h2>
+                    <a class="btn btn-primary fade-up" href="index.html?p=48.html">
                         <span>Contactez Nous</span>
                     </a>
                 </div>
