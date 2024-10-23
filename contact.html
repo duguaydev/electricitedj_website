@@ -522,10 +522,10 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
 </div>
 
 <!-- Foundation JS -->
+<script src="scripts/contact-form.js"></script>
 <script src="scripts/contact.js"></script>
 <script src="wp-content/themes/gm_theme/assets/js/foundation/jquery.min.js"></script>
-<script src="https://gmcontractors.co.uk/wp-content/themes/gm_theme/assets/js/foundation/what-input.min.js"></script>
-<script src="wp-content/themes/gm_theme/assets/js/foundation/foundation.min.js"></script>
+d<script src="wp-content/themes/gm_theme/assets/js/foundation/foundation.min.js"></script>
 <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -544,7 +544,7 @@ var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"
 <!--if(containerEl){-->
 <!--    var mixer = mixitup(containerEl);-->
 <!--}-->
-<!--</script>-->
+<!--</script>-->dd
 
 <!-- Mix It Up -->
 <script>
@@ -683,71 +683,6 @@ setTimeout(function(){ animation.play(); }, 1000);
 var wpcf7 = {"apiSettings":{"root":"https:\/\/gmcontractors.co.uk\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/scripts.js%3Fver=5.1.6'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var ctcc_vars = {"expiry":"30","method":"1","version":"1"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='wp-content/plugins/uk-cookie-consent/assets/js/uk-cookie-consent-js.js%3Fver=2.3.0'></script>
-<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LfT-8MUAAAAAKYcRQJMZbvc6VoxfUQjO0_k4v-B&#038;ver=3.0'></script>
-<script type='text/javascript' src='wp-includes/js/wp-embed.min.js%3Fver=5.3.9'></script>
-<script type="text/javascript">
-( function( grecaptcha, sitekey, actions ) {
-
-	var wpcf7recaptcha = {
-
-		execute: function( action ) {
-			grecaptcha.execute(
-				sitekey,
-				{ action: action }
-			).then( function( token ) {
-				var forms = document.getElementsByTagName( 'form' );
-
-				for ( var i = 0; i < forms.length; i++ ) {
-					var fields = forms[ i ].getElementsByTagName( 'input' );
-
-					for ( var j = 0; j < fields.length; j++ ) {
-						var field = fields[ j ];
-
-						if ( 'g-recaptcha-response' === field.getAttribute( 'name' ) ) {
-							field.setAttribute( 'value', token );
-							break;
-						}
-					}
-				}
-			} );
-		},
-
-		executeOnAcceuilpage: function() {
-			wpcf7recaptcha.execute( actions[ 'homepage' ] );
-		},
-
-		executeOnNous Rejoindreform: function() {
-			wpcf7recaptcha.execute( actions[ 'contactform' ] );
-		},
-
-	};
-
-	grecaptcha.ready(
-		wpcf7recaptcha.executeOnAcceuilpage
-	);
-
-	document.addEventListener( 'change',
-		wpcf7recaptcha.executeOnNous Rejoindreform, false
-	);
-
-	document.addEventListener( 'wpcf7Envoyer',
-		wpcf7recaptcha.executeOnAcceuilpage, false
-	);
-
-} )(
-	grecaptcha,
-	'6LfT-8MUAAAAAKYcRQJMZbvc6VoxfUQjO0_k4v-B',
-	{"homepage":"homepage","contactform":"contactform"}
-);
-</script>
-			
 				<script type="text/javascript">
 					jQuery(document).ready(function($){
 												if(!catapultReadCookie("catAccCookies")){ // If the cookie has not been set then show the bar
