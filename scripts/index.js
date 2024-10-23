@@ -9,12 +9,13 @@ function fetchAccueilContent() {
             // Update Hero Section
             document.getElementById("hero_title").innerHTML = accueilContent.hero_title;
             document.getElementById("hero_button_text").innerHTML = accueilContent.hero_button_text;
-
+            
             // Update Video Button Link
             let videoButton = document.getElementById("hero_video_button");
-            videoButton.href = accueilContent.hero_video_link; // Assuming there's a `hero_video_link` in Strapi
+            if (accueilContent.hero_video_url) {
+                videoButton.setAttribute("href", accueilContent.hero_video_url); // Set the video link dynamically
+            }
 
-            // Update Main Description
             document.getElementById("main_description").innerHTML = accueilContent.main_description;
 
             // Update Subheading
